@@ -12,21 +12,16 @@ export const ThemeProvider: React.FC<React.PropsWithChildren<{}>> = ({ children 
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      setIsDarkTheme(true);
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.add('light');
-    }
+    const theme = savedTheme === 'dark' ? 'dark' : 'light';
+    setIsDarkTheme(theme === 'dark');
+    document.body.setAttribute('data-theme', theme);
   }, []);
 
-const toggleTheme = () => {
+  const toggleTheme = () => {
     const newTheme = isDarkTheme ? 'light' : 'dark';
-    document.body.setAttribute('data-theme', newTheme);
     setIsDarkTheme(!isDarkTheme);
-
-    localStorage.setItem('theme', newTheme ? 'light' : 'dark');
-     return newTheme;
+    document.body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
   };
 
   return (

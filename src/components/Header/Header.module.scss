@@ -46,3 +46,26 @@
         
     }
 }
+
+@media (max-width: 1023px) {
+    .header {
+        height: 88px;
+
+        &__nav__logo {
+            height: 16px;;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        height: 64px;
+    }
+}
+
+
+
+    
+
+
+    

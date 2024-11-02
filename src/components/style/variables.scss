@@ -5,3 +5,23 @@ $primary-white: #FFFFFF;
 $primary-black: #121212;
 $primary-light-gray: #DEDEDE;
 $primary-dark-gray: #575757;
+$secondary-gray: #9C9C9C;
+$secondary-black: #1A1818;
+
+
+$font-cormorant: 'Cormorant SC', serif;
+$font-inter: 'Inter', sans-serif;
+
+@mixin paragraph-base {
+    font-family: $font-inter;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19.6px;
+}
+
+@mixin paragraph-small {
+    font-family: $font-inter;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16.8px;
+}

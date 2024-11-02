@@ -1,0 +1,7 @@
+@import '../style/variables.scss';
+
+.main {
+    width: min(1240px, 100% - 40px);
+    margin-top: 50px;
+    margin: auto;
+}

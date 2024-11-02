@@ -31,7 +31,7 @@ const SearchInput: React.FC<{ placeholder?: string }> = ({ placeholder = 'Painti
         className={classNames(styles.container, {
           [styles.darkTheme]: isDarkTheme,
           [styles.lightTheme]: !isDarkTheme,
-          [styles.focus]: isFocus,
+          [styles.focus_input]: isFocus,
         })}
       >
         <img src={magnifyer} alt="magnifyer" className={styles.container__magnifyer} />
