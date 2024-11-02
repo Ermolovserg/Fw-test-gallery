@@ -1,0 +1,14 @@
+@import '../style/variables.scss';
+
+.wrapper {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.container {
+    background-color: $primary-white;
+}
+
+
+
