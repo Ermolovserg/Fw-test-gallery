@@ -36,10 +36,26 @@ $font-inter: 'Inter', sans-serif;
     text-transform: uppercase;
 }
 
-@mixin caption {
+@mixin heading-h2 {
+    font-family: $font-cormorant;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 14.53px;
+    text-transform: uppercase;
+}
+
+@mixin caption-12 {
     font-family: $font-inter;
     font-weight: 700;
     font-size: 12px;
+    line-height: 14.52px;
+    text-transform: uppercase;
+}
+
+@mixin caption-8 {
+    font-family: $font-inter;
+    font-weight: 700;
+    font-size: 8px;
     line-height: 14.52px;
     text-transform: uppercase;
 }

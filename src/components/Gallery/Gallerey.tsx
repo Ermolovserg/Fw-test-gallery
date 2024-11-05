@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import classNames from 'classnames';
 import { useTheme } from '../context/ThemeContext';
 import { fetchPaintings, fetchAuthors, fetchLocations, Painting } from '../store/gallerySlice';
 import { RootState, AppDispatch } from '../store/store';
@@ -35,12 +34,12 @@ const Gallery: React.FC = () => {
           <img src={painting.imageUrl} alt={painting.name} className={styles.imageArt} />
           <div className={`${styles.imageInfo} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
             <div className={`${styles.slide} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} data-slide="1">
-              <p className={styles.imageText}>{painting.name}</p>
-              <p className={`${styles.imageText} ${styles.goldText} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{painting.created}</p>
+              <span className={styles.imageText}>{painting.name}</span>
+              <span className={`${styles.imageText} ${styles.goldText} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{painting.created}</span>
             </div>
             <div className={`${styles.slide} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} data-slide="2">
-              <p className={styles.imageText}>{getAuthorName(painting.authorId)}</p>
-              <p className={`${styles.imageText} ${styles.goldText} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{getLocationName(painting.locationId)}</p>
+              <span className={styles.imageText}>{getAuthorName(painting.authorId)}</span>
+              <span className={`${styles.imageText} ${styles.goldText} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{getLocationName(painting.locationId)}</span>
             </div>
           </div>
         </div>

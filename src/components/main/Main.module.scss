@@ -2,6 +2,19 @@
 
 .main {
     width: min(1240px, 100% - 40px);
-    margin-top: 50px;
+    padding-top: 130px;
     margin: auto;
+    z-index: 1001;
+}
+
+@media (max-width: 1023px) {
+    .main {
+        padding-top: 138px;
+    }
+}
+
+@media (max-width: 767px) {
+    .main {
+        padding-top: 114px;
+    }
 }

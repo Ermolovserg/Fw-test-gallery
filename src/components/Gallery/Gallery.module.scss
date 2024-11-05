@@ -17,12 +17,12 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  aspect-ratio: 5 / 3;
+  aspect-ratio: 9/6;
   overflow: hidden;
   border: none;
 
   &:hover .slide[data-slide="1"] {
-    transform: translateX(-100%);
+    transform: translateX(-130%);
   }
   &:hover .slide[data-slide="2"] {
     transform: translateY(0);
@@ -52,6 +52,13 @@
   display: flex;
   justify-content: space-between;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  
+  @media (max-width: 768px) {
+    width: 80%;
+    height: 25%;
+  }
 
   &.darkTheme {
     background-color: $primary-black;
@@ -69,7 +76,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: start;
     text-align: start;
     transition: transform 0.5s ease;
 
@@ -99,11 +105,20 @@
   }
 
 .imageText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     @include heading-h1;
+    @media (max-width: 767px) {
+        @include heading-h2
+    }
 }
 
 .goldText {
-    @include caption;
+    @include caption-12;
+    @media (max-width: 767px) {
+        @include caption-8
+    }
 
     &.darkTheme {
         color: $accent-gold;
@@ -111,6 +126,29 @@
       &.lightTheme {
         color: $accent-red;
       }
-    
-
 }}
+
+@media (max-width: 1023px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .darkTheme::before,
+    .lightTheme::before {
+      display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .goldText {
+        @include caption-8
+    }
+
+}
+
+
+
