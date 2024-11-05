@@ -1,4 +1,4 @@
-@import '../style/variables.scss';
+@use '../style/variables.scss' as *;
 
 .wrapper {
     margin: auto;
@@ -6,6 +6,7 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .container {
@@ -95,10 +96,6 @@
             @include paragraph-small;
         }
     }
-
-    
-
-
    }
 
 

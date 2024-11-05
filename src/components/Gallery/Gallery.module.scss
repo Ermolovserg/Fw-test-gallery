@@ -1,0 +1,116 @@
+@use '../style/variables.scss' as *;
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: space-between;
+
+  &.darkTheme {
+    background-color: $primary-black;
+  }
+  &.lightTheme {
+    background-color: $primary-white;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  overflow: hidden;
+  border: none;
+
+  &:hover .slide[data-slide="1"] {
+    transform: translateX(-100%);
+  }
+  &:hover .slide[data-slide="2"] {
+    transform: translateY(0);
+  }
+}
+
+.imageArt {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.imageInfo {
+  position: absolute;
+  width: 70%;
+  height: 30%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+
+  &.darkTheme {
+    background-color: $primary-black;
+  }
+
+  &.lightTheme {
+    background-color: $primary-white;
+  }
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: start;
+    transition: transform 0.5s ease;
+
+    &[data-slide="1"] {
+      transform: translateX(0);
+    }
+
+    &[data-slide="2"] {
+      transform: translateY(100%);
+    }
+  }
+
+  .darkTheme, .lightTheme {
+    &::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 60%;
+      top: 25%;
+      left: 0;
+      background-color: $accent-gold;
+    }
+  
+    &.lightTheme::before {
+      background-color: $accent-red;
+    }
+  }
+
+.imageText {
+    @include heading-h1;
+}
+
+.goldText {
+    @include caption;
+
+    &.darkTheme {
+        color: $accent-gold;
+      }
+      &.lightTheme {
+        color: $accent-red;
+      }
+    
+
+}}

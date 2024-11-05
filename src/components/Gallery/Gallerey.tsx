@@ -1,0 +1,52 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import classNames from 'classnames';
+import { useTheme } from '../context/ThemeContext';
+import { fetchPaintings, fetchAuthors, fetchLocations, Painting } from '../store/gallerySlice';
+import { RootState, AppDispatch } from '../store/store';
+import styles from './Gallery.module.scss';
+
+const Gallery: React.FC = () => {
+  const dispatch: AppDispatch = useDispatch();
+  const { paintings, authors, locations } = useSelector((state: RootState) => state.gallery);
+  const { isDarkTheme } = useTheme();
+
+
+  useEffect(() => {
+    dispatch(fetchPaintings(''));
+    dispatch(fetchAuthors());
+    dispatch(fetchLocations());
+  }, [dispatch]); 
+
+  const getAuthorName = (authorId: number) => {
+    const author = authors.find((a) => a.id === authorId);
+    return author ? author.name : 'unknown';
+  };
+
+  const getLocationName = (locationId: number) => {
+    const location = locations.find((loc) => loc.id === locationId);
+    return location ? location.location : 'unknown';
+  };
+
+  return (
+    <section className={`${styles.gallery} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
+      {paintings.map((painting: Painting) => (
+        <div key={painting.id} className={styles.imageContainer}>
+          <img src={painting.imageUrl} alt={painting.name} className={styles.imageArt} />
+          <div className={`${styles.imageInfo} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>
+            <div className={`${styles.slide} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} data-slide="1">
+              <p className={styles.imageText}>{painting.name}</p>
+              <p className={`${styles.imageText} ${styles.goldText} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{painting.created}</p>
+            </div>
+            <div className={`${styles.slide} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`} data-slide="2">
+              <p className={styles.imageText}>{getAuthorName(painting.authorId)}</p>
+              <p className={`${styles.imageText} ${styles.goldText} ${isDarkTheme ? styles.darkTheme : styles.lightTheme}`}>{getLocationName(painting.locationId)}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+  );  
+};
+
+export default Gallery;

@@ -1,4 +1,4 @@
-@import '../style/variables.scss';
+@use '../style/variables.scss' as *;
 
 .header {
     position: static;
@@ -6,11 +6,11 @@
     height: 80px;
 
     &.darkTheme {
-        background-color: $primary-black;
+        background-color: $primary-black;}
     &.lightTheme {
         background-color: $primary-white;
     }
-    }
+    
 
     &__nav {
         display: flex;

@@ -1,4 +1,4 @@
-@import '../style/variables.scss';
+@use '../style/variables.scss' as *;
 
 .main {
     width: min(1240px, 100% - 40px);

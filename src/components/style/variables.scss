@@ -7,6 +7,8 @@ $primary-light-gray: #DEDEDE;
 $primary-dark-gray: #575757;
 $secondary-gray: #9C9C9C;
 $secondary-black: #1A1818;
+$accent-red: #9B4B4B;
+$accent-gold: #AB8956;
 
 
 $font-cormorant: 'Cormorant SC', serif;
@@ -24,4 +26,20 @@ $font-inter: 'Inter', sans-serif;
     font-weight: 300;
     font-size: 12px;
     line-height: 16.8px;
+}
+
+@mixin heading-h1 {
+    font-family: $font-cormorant;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 19.38px;
+    text-transform: uppercase;
+}
+
+@mixin caption {
+    font-family: $font-inter;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.52px;
+    text-transform: uppercase;
 }
