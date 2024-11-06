@@ -1,5 +1,5 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 export type Painting = {
   authorId: number;
@@ -20,36 +20,41 @@ export type Location = {
   location: string;
 };
 
-
 export const fetchPaintings = createAsyncThunk<Painting[], string>(
-  'gallery',
+  "gallery",
   async (q) => {
-    const response = await axios.get(`https://test-front.framework.team/paintings?q=${q}`);
+    const response = await axios.get(
+      `https://test-front.framework.team/paintings?q=${q}`,
+    );
     return response.data.map((painting: Painting) => ({
       ...painting,
       imageUrl: `https://test-front.framework.team${painting.imageUrl}`,
     }));
-  }
+  },
 );
 
 export const fetchAuthors = createAsyncThunk<Author[]>(
-  'gallery/fetchAuthors',
+  "gallery/fetchAuthors",
   async () => {
-    const response = await axios.get<Author[]>('https://test-front.framework.team/authors');
+    const response = await axios.get<Author[]>(
+      "https://test-front.framework.team/authors",
+    );
     return response.data;
-  }
+  },
 );
 
 export const fetchLocations = createAsyncThunk<Location[]>(
-  'gallery/fetchLocations',
+  "gallery/fetchLocations",
   async () => {
-    const response = await axios.get<Location[]>('https://test-front.framework.team/locations');
+    const response = await axios.get<Location[]>(
+      "https://test-front.framework.team/locations",
+    );
     return response.data;
-  }
+  },
 );
 
 const gallerySlice = createSlice({
-  name: 'gallery',
+  name: "gallery",
   initialState: {
     paintings: [] as Painting[],
     authors: [] as Author[],

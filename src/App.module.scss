@@ -1,17 +1,16 @@
-@use './components/style/variables.scss' as*;
+@use "./components/style/variables.scss" as *;
 
 * {
-    box-sizing: border-box;
-    margin: 0;
+  box-sizing: border-box;
+  margin: 0;
 }
 
+body[data-theme="light"] {
+  background-color: $primary-white;
+  color: $primary-black;
+}
 
-body[data-theme='light'] {
-    background-color: $primary-white;
-    color: $primary-black;
-  }
-  
-  body[data-theme='dark'] {
-    background-color: $primary-black;
-    color: $primary-white;
-  }
+body[data-theme="dark"] {
+  background-color: $primary-black;
+  color: $primary-white;
+}

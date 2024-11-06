@@ -1,4 +1,4 @@
-@use '../style/variables.scss' as *;
+@use "../style/variables.scss" as *;
 
 .gallery {
   display: grid;
@@ -54,7 +54,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  
+
   @media (max-width: 768px) {
     width: 80%;
     height: 25%;
@@ -88,9 +88,10 @@
     }
   }
 
-  .darkTheme, .lightTheme {
+  .darkTheme,
+  .lightTheme {
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       width: 2px;
       height: 60%;
@@ -98,57 +99,54 @@
       left: 0;
       background-color: $accent-gold;
     }
-  
+
     &.lightTheme::before {
       background-color: $accent-red;
     }
   }
 
-.imageText {
+  .imageText {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
     @include heading-h1;
     @media (max-width: 767px) {
-        @include heading-h2
+      @include heading-h2;
     }
-}
+  }
 
-.goldText {
+  .goldText {
     @include caption-12;
     @media (max-width: 767px) {
-        @include caption-8
+      @include caption-8;
     }
 
     &.darkTheme {
-        color: $accent-gold;
-      }
-      &.lightTheme {
-        color: $accent-red;
-      }
-}}
+      color: $accent-gold;
+    }
+    &.lightTheme {
+      color: $accent-red;
+    }
+  }
+}
 
 @media (max-width: 1023px) {
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
-    .darkTheme::before,
-    .lightTheme::before {
-      display: none;
-    }
+  .darkTheme::before,
+  .lightTheme::before {
+    display: none;
+  }
 }
 
 @media (max-width: 767px) {
-    .gallery {
-        grid-template-columns: repeat(1, 1fr);
-    }
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
 
-    .goldText {
-        @include caption-8
-    }
-
+  .goldText {
+    @include caption-8;
+  }
 }
-
-
-
