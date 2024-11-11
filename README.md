@@ -25,6 +25,9 @@
 4. Исправьте ошибки, выявленные линтером:
    npm run lint:fix
 
+5. Страница с GitHub Page 
+   https://ermolovserg.github.io/Fw-test-gallery/
+
 
 
 
