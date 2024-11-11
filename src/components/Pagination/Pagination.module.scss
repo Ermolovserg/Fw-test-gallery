@@ -1,0 +1,81 @@
+@use "../style/variables.scss" as *;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  margin: 40px 0;
+  gap: 10px;
+  position: relative;
+
+  &__button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    border-radius: 2px;
+    position: relative;
+    @include paragraph-big-light;
+    
+    &.darkTheme {
+        color: $primary-light-gray;
+      }
+    
+    &.lightTheme {
+        color: $primary-dark-gray;
+      }
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background-color: $secondary-gray;
+    }
+
+    &:hover {
+      color: inherit;
+
+      &::after {
+        width: 100%;
+      }
+    }
+
+    &--active {
+        color: $primary-white;
+        border-radius: 2px;
+        font-weight: bold;
+        position: relative;
+        &.darkTheme {
+            background-color: $secondary-black;
+          }
+        &.lightTheme {
+            background-color:  $primary-black-active;
+          }
+      }
+
+      &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        border: none;
+        background: none;
+        border-radius: 2px;
+      
+          &:hover {
+            background-color:  $primary-black-active;
+      }
+  }
+
+  .arrow {
+    width: 8px;
+    height: 11px;
+  }
+}
+}
+
+

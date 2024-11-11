@@ -1,0 +1,97 @@
+@use "../style/variables.scss" as *;
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.container {
+  background-color: $primary-white;
+  width: 336px;
+  position: relative;
+  height: 36px;
+  border: 1px solid $primary-light-gray;
+  padding: 8px 0 8px 50px;
+  border-radius: 5px;
+
+  &.darkTheme {
+    background-color: $secondary-black;
+    border: none;
+    color: $secondary-black;
+
+    &.focus_input {
+      border: 1px solid $primary-light-gray;
+    }
+  }
+
+  &.lightTheme {
+    background-color: $primary-white;
+    color: $primary-dark-gray;
+
+    &.focus_input {
+      border: 1px solid $primary-dark-gray;
+    }
+  }
+
+  &__magnifyer {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+
+  &__input {
+    @include paragraph-base;
+    border: none;
+    width: 100%;
+    height: 20px;
+    background-color: $primary-white;
+    outline: none;
+
+    &.darkTheme {
+      background-color: $secondary-black;
+      color: $primary-white;
+    }
+
+    &.lightTheme {
+      background-color: $primary-white;
+      color: $primary-dark-gray;
+    }
+
+    &::placeholder {
+      color: $primary-dark-gray;
+      font-size: 14px;
+    }
+  }
+
+  &__clearButton {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    right: 16px;
+    top: 10px;
+    border: 0;
+    padding: 0;
+    background-color: inherit;
+    border: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .container {
+    width: 296px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    height: 33px;
+
+    &__iput {
+      @include paragraph-small;
+    }
+  }
+}

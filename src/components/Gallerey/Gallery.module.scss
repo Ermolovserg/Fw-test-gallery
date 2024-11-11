@@ -1,0 +1,152 @@
+@use "../style/variables.scss" as *;
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: space-between;
+
+  &.darkTheme {
+    background-color: $primary-black;
+  }
+  &.lightTheme {
+    background-color: $primary-white;
+  }
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/6;
+  overflow: hidden;
+  border: none;
+
+  &:hover .slide[data-slide="1"] {
+    transform: translateX(-130%);
+  }
+  &:hover .slide[data-slide="2"] {
+    transform: translateY(0);
+  }
+}
+
+.imageArt {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  transition: transform 0.5s ease;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.imageInfo {
+  position: absolute;
+  width: 70%;
+  height: 30%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  @media (max-width: 768px) {
+    width: 80%;
+    height: 25%;
+  }
+
+  &.darkTheme {
+    background-color: $primary-black;
+  }
+
+  &.lightTheme {
+    background-color: $primary-white;
+  }
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: start;
+    transition: transform 0.5s ease;
+
+    &[data-slide="1"] {
+      transform: translateX(0);
+    }
+
+    &[data-slide="2"] {
+      transform: translateY(100%);
+    }
+  }
+
+  .darkTheme,
+  .lightTheme {
+    &::before {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 60%;
+      top: 25%;
+      left: 0;
+      background-color: $accent-gold;
+    }
+
+    &.lightTheme::before {
+      background-color: $accent-red;
+    }
+  }
+
+  .imageText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    @include heading-h1;
+    @media (max-width: 767px) {
+      @include heading-h2;
+    }
+  }
+
+  .goldText {
+    @include caption-12;
+    @media (max-width: 767px) {
+      @include caption-8;
+    }
+
+    &.darkTheme {
+      color: $accent-gold;
+    }
+    &.lightTheme {
+      color: $accent-red;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .darkTheme::before,
+  .lightTheme::before {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .goldText {
+    @include caption-8;
+  }
+}
