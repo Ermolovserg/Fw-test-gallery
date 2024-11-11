@@ -13,20 +13,20 @@
 ## Установка и запуск
 
 1. Клонируйте репозиторий:
-   git clone https://github.com/Ermolovserg/Fw-test-gallery.git
-   cd Fw-test-gallery
+   - git clone https://github.com/Ermolovserg/Fw-test-gallery.git
+   - cd Fw-test-gallery
 
 2.  Установите зависимости:
-    npm install или npm i
+    - npm install или npm i
 
 3. Запустите проект:
-   npm run dev
+   - npm run dev
 
 4. Исправьте ошибки, выявленные линтером:
-   npm run lint:fix
+   - npm run lint:fix
 
 5. Страница с GitHub Page 
-   https://ermolovserg.github.io/Fw-test-gallery/
+   - https://ermolovserg.github.io/Fw-test-gallery/
 
 
 
