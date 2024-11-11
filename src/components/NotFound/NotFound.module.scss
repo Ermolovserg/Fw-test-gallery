@@ -1,29 +1,29 @@
 @use "../style/variables.scss" as *;
 
 .notFound {
-    text-align: start;
+  text-align: start;
+  color: $primary-dark-gray;
+  padding-top: 40px;
+
+  h2 {
+    @include paragraph-big-light;
+  }
+
+  &.lightTheme h2 {
     color: $primary-dark-gray;
-    padding-top: 40px;
-    
-    h2 {
-        @include paragraph-big-light;
-    }
+  }
 
-    &.lightTheme h2 {
-        color: $primary-dark-gray;
-    }
+  &.darkTheme h2 {
+    color: $primary-light-gray;
+  }
 
-    &.darkTheme h2 {
-        color: $primary-light-gray;
-      }
+  &__bold {
+    font-weight: 500;
+  }
 
-    &__bold {
-       font-weight: 500;
-    }
-
-    p {
-        @include paragraph-base;
-        color: $secondary-gray;
-        padding-top: 10px;
-    }
+  p {
+    @include paragraph-base;
+    color: $secondary-gray;
+    padding-top: 10px;
+  }
 }

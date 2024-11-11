@@ -5,29 +5,29 @@
 ## Технологии
 
 - **React 18**, **TypeScript 5**
-- **SCSS** 
+- **SCSS**
 - **Axios**, **Redux Toolkit**, **RTK Query**
-- **ESLint с конфигом Airbnb** 
+- **ESLint с конфигом Airbnb**
 - **Vite**
 
 ## Установка и запуск
 
 1. Клонируйте репозиторий:
+
    - git clone https://github.com/Ermolovserg/Fw-test-gallery.git
    - cd Fw-test-gallery
 
-2.  Установите зависимости:
-    - npm install или npm i
+2. Установите зависимости:
+
+   - npm install или npm i
 
 3. Запустите проект:
+
    - npm run dev
 
 4. Исправьте ошибки, выявленные линтером:
+
    - npm run lint:fix
 
-5. Страница с GitHub Page 
+5. Страница с GitHub Page
    - https://ermolovserg.github.io/Fw-test-gallery/
-
-
-
-

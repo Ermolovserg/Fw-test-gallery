@@ -16,14 +16,14 @@
     border-radius: 2px;
     position: relative;
     @include paragraph-big-light;
-    
+
     &.darkTheme {
-        color: $primary-light-gray;
-      }
-    
+      color: $primary-light-gray;
+    }
+
     &.lightTheme {
-        color: $primary-dark-gray;
-      }
+      color: $primary-dark-gray;
+    }
 
     &::after {
       content: "";
@@ -44,38 +44,36 @@
     }
 
     &--active {
-        color: $primary-white;
-        border-radius: 2px;
-        font-weight: bold;
-        position: relative;
-        &.darkTheme {
-            background-color: $secondary-black;
-          }
-        &.lightTheme {
-            background-color:  $primary-black-active;
-          }
+      color: $primary-white;
+      border-radius: 2px;
+      font-weight: bold;
+      position: relative;
+      &.darkTheme {
+        background-color: $secondary-black;
       }
-
-      &__arrow {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 24px;
-        height: 24px;
-        border: none;
-        background: none;
-        border-radius: 2px;
-      
-          &:hover {
-            background-color:  $primary-black-active;
+      &.lightTheme {
+        background-color: $primary-black-active;
       }
-  }
+    }
 
-  .arrow {
-    width: 8px;
-    height: 11px;
+    &__arrow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 24px;
+      height: 24px;
+      border: none;
+      background: none;
+      border-radius: 2px;
+
+      &:hover {
+        background-color: $primary-black-active;
+      }
+    }
+
+    .arrow {
+      width: 8px;
+      height: 11px;
+    }
   }
 }
-}
-
-
